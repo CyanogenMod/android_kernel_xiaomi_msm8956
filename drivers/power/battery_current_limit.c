@@ -1664,6 +1664,7 @@ static int bcl_probe(struct platform_device *pdev)
 	enum bcl_device_mode bcl_mode = BCL_DEVICE_DISABLED;
 	char cpu_str[MAX_CPU_NAME];
 	int cpu;
+	const char *label;
 
 	bcl = devm_kzalloc(&pdev->dev, sizeof(struct bcl_context), GFP_KERNEL);
 	if (!bcl) {
@@ -1756,6 +1757,10 @@ static int bcl_probe(struct platform_device *pdev)
 
 	gbcl = bcl;
 	platform_set_drvdata(pdev, bcl);
+
+	if (of_property_read_string(pdev->dev.of_node, "label", &label) == 0)
+		dev_set_name(&pdev->dev, "%s", label);
+
 	INIT_DEFERRABLE_WORK(&bcl->bcl_iavail_work, bcl_iavail_work);
 	INIT_WORK(&bcl_hotplug_work, bcl_handle_hotplug);
 	if (bcl_mode == BCL_DEVICE_ENABLED)
