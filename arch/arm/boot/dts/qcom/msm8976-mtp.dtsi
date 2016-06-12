@@ -214,6 +214,7 @@
 		vcc_spi-supply = <&pm8950_l6>;
 		vdd_ana-supply = <&pm8950_l6>;
 		vdd_io-supply = <&pm8950_l6>;
+		fpc,enable-wakeup;
 		};
 	};
 
