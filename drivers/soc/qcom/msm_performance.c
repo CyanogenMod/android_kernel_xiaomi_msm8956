@@ -25,7 +25,7 @@
 #include <linux/module.h>
 #include <linux/kthread.h>
 
-static int touchboost = 1;
+static int touchboost = 0;
 
 static struct mutex managed_cpus_lock;
 
