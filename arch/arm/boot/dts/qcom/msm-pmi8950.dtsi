@@ -198,7 +198,7 @@
 			qcom,chg-inhibit-fg;
 			qcom,rparasitic-uohm = <100000>;
 			qcom,bms-psy-name = "bms";
-			qcom,thermal-mitigation = <3000 1500 700 600 0>;
+			qcom,thermal-mitigation = <3000 2100 1500 600 0>;
 			qcom,parallel-usb-min-current-ma = <1900>;
 			qcom,parallel-usb-9v-min-current-ma = <900>;
 			qcom,parallel-allowed-lowering-ma = <500>;
