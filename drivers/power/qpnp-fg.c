@@ -1,5 +1,4 @@
 /* Copyright (c) 2014-2015, The Linux Foundation. All rights reserved.
- * Copyright (C) 2016 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -1675,7 +1674,7 @@ static int get_monotonic_soc_raw(struct fg_chip *chip)
 }
 
 #define EMPTY_CAPACITY		0
-#define DEFAULT_CAPACITY	-2
+#define DEFAULT_CAPACITY	50
 #define MISSING_CAPACITY	100
 #define FULL_CAPACITY		100
 #define FULL_SOC_RAW		0xFF
