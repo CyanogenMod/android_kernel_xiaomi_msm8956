@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2016 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -880,6 +881,7 @@ static enum handoff mux_div_clk_handoff(struct clk *c)
 	unsigned int numer;
 
 	parent_rate = clk_get_rate(c->parent);
+
 	/*
 	 * div values are doubled for half dividers.
 	 * Adjust for that by picking a numer of 2.
@@ -894,9 +896,9 @@ static enum handoff mux_div_clk_handoff(struct clk *c)
 	}
 
 	if (md->en_mask && md->ops && md->ops->is_enabled)
-		return md->ops->is_enabled(md)
-			? HANDOFF_ENABLED_CLK
-			: HANDOFF_DISABLED_CLK;
+			return md->ops->is_enabled(md)
+				? HANDOFF_ENABLED_CLK
+				: HANDOFF_DISABLED_CLK;
 
 	/*
 	 * If this function returns 'enabled' even when the clock downstream

@@ -1,4 +1,5 @@
 /* Copyright (c) 2014-2015, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2016 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -3775,6 +3776,7 @@ static irqreturn_t fg_batt_missing_irq_handler(int irq, void *_chip)
 		}
 	}
 
+
 	if (chip->power_supply_registered)
 		power_supply_changed(&chip->bms_psy);
 	return IRQ_HANDLED;
@@ -3852,7 +3854,6 @@ static irqreturn_t fg_soc_irq_handler(int irq, void *_chip)
 		fg_stay_awake(&chip->capacity_learning_wakeup_source);
 		schedule_work(&chip->fg_cap_learning_work);
 	}
-
 	return IRQ_HANDLED;
 }
 
