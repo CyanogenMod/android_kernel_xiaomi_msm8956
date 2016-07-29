@@ -18,7 +18,6 @@
 
 	/* Bus governor */
 	gpubw: qcom,gpubw {
-		label = "gpubw";
 		compatible = "qcom,devbw";
 		governor = "bw_vbif";
 		qcom,src-dst-ports = <26 512>;
@@ -48,7 +47,7 @@
 
 		qcom,chipid = <0x05010000>;
 
-		qcom,initial-pwrlevel = <5>;
+		qcom,initial-pwrlevel = <4>;
 
 		qcom,idle-timeout = <8>; //<HZ/12>
 		qcom,strtstp-sleepwake;
