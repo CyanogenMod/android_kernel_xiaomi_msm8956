@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2016 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -14,7 +15,7 @@
 #include "msm8976-pinctrl.dtsi"
 #include "msm8976-camera-sensor-mtp.dtsi"
 #include "msm8976-mdss-mtp.dtsi"
-#include "cyanogenmod-xiaomi-common.dtsi"
+/*#include "msm8976-wsa881x.dtsi"*/
 
 &i2c_4 { /* BLSP1 QUP4 */
 	focaltech@38 {
@@ -188,16 +189,18 @@
 		vdd-supply = <&pm8950_l10>;
 	};
 
-	fpc_fpc1020 {
-		compatible = "fpc,fpc1020";
-		fpc,gpio_rst = <&msm_gpio 110 0>;
-		fpc,gpio_irq = <&msm_gpio 106 0>;
-		fpc,irq_flags = <0x2001>;
-		fpc,event-type = <4>;
-		fpc,event-code = <4>;
-		vcc_spi-supply = <&pm8950_l6>;
-		fpc,enable-wakeup;
-	};
+       fpc_fpc1020 {
+                compatible = "fpc,fpc1020";
+                fpc,gpio_rst = <&msm_gpio 110 0>;
+                fpc,gpio_irq = <&msm_gpio 106 0>;
+                fpc,irq_flags = <0x2001>;
+                fpc,event-type = <4>;
+                fpc,event-code = <4>;
+                vcc_spi-supply = <&pm8950_l6>;
+                vdd_ana-supply = <&pm8950_l6>;
+                vdd_io-supply = <&pm8950_l6>;
+                fpc,enable-wakeup;
+        };
 };
 
 &blsp1_uart2 {
